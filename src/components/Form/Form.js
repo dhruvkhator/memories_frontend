@@ -16,7 +16,7 @@ function Form({ currentId, setCurrentId }) {
     const history = useHistory();
 
     const classes = useStyles();
-    const [postData, setPostData] = useState({ title:'', message:'', tags:'', selectedFile:''});
+    const [postData, setPostData] = useState({ title:'', message:'', tags:[], selectedFile:''});
 
     const dispatch = useDispatch();
     const user = JSON.parse(localStorage.getItem('profile'));
@@ -27,7 +27,7 @@ function Form({ currentId, setCurrentId }) {
     
     const clear =() =>{ 
         setCurrentId(0); 
-        setPostData({ title:'', message:'', tags:'', selectedFile:''})
+        setPostData({ title:'', message:'', tags:[], selectedFile:''})
     };
 
     const handleSubmit = async (e) => {
